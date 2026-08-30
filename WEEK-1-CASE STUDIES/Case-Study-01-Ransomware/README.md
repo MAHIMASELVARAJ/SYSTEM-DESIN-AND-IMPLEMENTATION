@@ -1,6 +1,6 @@
-Case Study 1 — Stopping Ransomware From Spreading Across Cloud Tenants at [Illustrative: "MeridianCloud Storage"]
+**Case Study 1 — Stopping Ransomware From Spreading Across Cloud Tenants at [Illustrative: "MeridianCloud Storage"]**
 
-Executive Summary
+**Executive Summary**
 
 A mid-size multi-tenant cloud storage provider faces a growing risk: ransomware infecting
 one customer's storage account can spread sideways into other customers sharing the same
@@ -9,7 +9,7 @@ patterns across tenants in real time, detects the specific signature of ransomwa
 between accounts, and automatically isolates the affected storage segment — before human
 responders can even open a ticket.
 
-The Problem Statement
+**The Problem Statement**
 
 Cloud storage providers host many different customers (tenants) on shared infrastructure.
 Existing ransomware detection tools typically watch one storage volume at a time, looking
@@ -20,7 +20,7 @@ at risk. For a provider hosting hundreds of business customers, even one success
 cross-tenant spread event could mean simultaneous data loss for many companies at once and
 serious reputational and legal exposure.
 
-The Solution
+**The Solution**
 
 A cross-tenant correlation engine sits above individual per-tenant monitoring. Instead of
 asking "is this one volume being encrypted abnormally fast?", it asks "are multiple tenants
@@ -30,7 +30,7 @@ doesn't just alert a security analyst — it automatically severs network access
 affected storage segment and triggers a snapshot rollback, containing the spread within
 seconds rather than the hours a manual response would take.
 
-The Implementation
+**The Implementation**
 
 Deploy lightweight I/O pattern collectors on each storage node to stream write metadata (not file contents) to a central analysis service.
 
@@ -44,7 +44,7 @@ Wire the "Isolate" decision directly into the cloud storage control plane so iso
 
 Log every decision for audit and post-incident review.
 
-Results (Target outcomes to validate during prototyping)
+**Results (Target outcomes to validate during prototyping)**
 
 Target: detect cross-tenant spread within under 60 seconds of the second tenant's infection beginning (to be measured against a simulated multi-tenant test environment).
 
@@ -52,8 +52,7 @@ Target: reduce the number of tenants affected by a single ransomware event from 
 
 Target: keep false-positive isolation events below an agreed threshold (e.g. under 1 per 1,000 legitimate high-write-volume events, such as backups) — this needs real testing data to set correctly.
 
-Conclusion / Takeaway
-
+**Conclusion / Takeaway**
 Watching individual storage volumes in isolation misses the specific danger of shared cloud
 infrastructure: one infection becoming everyone's problem. Treating cross-tenant correlation
 as its own detection layer, tied to an automatic (not just advisory) isolation action, is the
