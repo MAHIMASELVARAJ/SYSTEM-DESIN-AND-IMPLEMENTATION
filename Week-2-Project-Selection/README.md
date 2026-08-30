@@ -1,305 +1,237 @@
-# Week 2 – High-Level Project Selection
+# Week 2 — Case Study Evaluation, Selection & Justification
 
-## Cybersecurity and Digital Trust
+## Overview
 
-### Objective
+Week 2 focuses on evaluating the five cybersecurity case studies proposed during Week 1 and selecting the two strongest projects for detailed research, literature analysis, architecture design, and future prototype development.
 
-The objective of Week 2 is to analyze the five cybersecurity and
-digital trust case studies identified during Week 1 and select two
-projects for detailed high-level system design.
+The selection was based on six criteria:
 
-The projects were evaluated based on:
+1. Problem Clarity
+2. Feasibility
+3. Literature Availability
+4. Novelty Headroom
+5. Patentability Potential in India
+6. Real-World Impact
 
-- Real-world problem significance
-- Cybersecurity relevance
-- Digital trust contribution
-- Technical complexity
-- Innovation potential
-- Cloud deployment feasibility
-- Scalability
-- Practical implementation feasibility
-- Research potential
-- Prior-art landscape
-- Potential for developing a differentiated technical mechanism
+Each criterion was scored from 1 to 5, giving a maximum possible score of 30.
+
+The purpose of this evaluation is not to claim that any project is already novel or patentable. Instead, the scoring identifies which projects have the strongest combination of research potential, technical contribution, feasibility, and potential for further prior-art and patent analysis.
 
 ---
 
-# Evaluation of the Five Case Studies
+# 1. Selection Criteria
 
-| Project | Real-World Impact | Design Scope | Cloud Feasibility | Innovation Opportunity | Overall |
-|---|---|---|---|---|---|
-| ProofPulse | Very High | Very High | Very High | High | Selected |
-| AgentGuard | Very High | Very High | Very High | Very High | Selected |
-| DeepShield | Very High | High | Very High | Medium | Not Selected |
-| DataLeak Sentinel | Very High | High | Very High | Medium | Not Selected |
-| TrustBridge | High | High | Very High | Medium | Not Selected |
-
----
-
-# Selected Project 1 – AgentGuard
-
-## Purpose-Bound Security Firewall for Autonomous AI Agents
-
-### Problem
-
-Autonomous AI agents can interact with APIs, databases, files,
-applications and other digital resources.
-
-A user may authorize an AI agent to perform a specific task, but
-the agent may execute additional actions that go beyond the
-original human intention.
-
-Therefore, there is a need for a security mechanism that can
-continuously determine whether each AI-agent action remains
-within the boundaries of the original authorization.
-
-### Proposed Solution
-
-AgentGuard is proposed as a cloud-based security control layer
-between autonomous AI agents and enterprise resources.
-
-It evaluates:
-
-- Human authorization
-- Agent identity
-- Original user intent
-- Requested action
-- Target resource
-- Permission scope
-- Action sequence
-- Data sensitivity
-- Current security context
-
-The system can respond with:
-
-**ALLOW / VERIFY / BLOCK**
-
-### High-Level Innovation Direction
-
-The project will investigate a:
-
-**Purpose-Bound Execution Envelope**
-
-The envelope can contain:
-
-- Authorized purpose
-- Permitted resources
-- Permitted operations
-- Data-access limitations
-- Transaction limitations
-- Time restrictions
-
-Each subsequent AI-agent action is evaluated against this
-purpose-bound envelope.
-
-### Core Flow
-
-Human Intent
-→ AI Agent
-→ AgentGuard
-→ Action Verification
-→ Policy Decision
-→ Allow / Verify / Block
-→ Enterprise Resource
-
-### Cloud Deployment
-
-The proposed system can be deployed using:
-
-- Cloud API Gateway
-- Agent Security Gateway
-- Intent Analysis Service
-- Authorization Engine
-- Policy Engine
-- Risk Engine
-- Event Processing
-- Database
-- Audit Logging
-- Security Dashboard
-
-### Why Selected
-
-AgentGuard has strong potential for a high-level cybersecurity
-architecture because autonomous AI security is an emerging area.
-It also provides significant scope for cloud deployment,
-security policies, AI integration, monitoring and research.
-
-### Patent Potential
-
-The overall concept is not claimed as automatically patentable.
-The project will require detailed prior-art analysis to identify
-a specific technical mechanism that is novel and non-obvious.
-
-The intended research direction is the combination of
-purpose-bound authorization with continuous verification of
-AI-agent execution and action lineage.
+| Criterion | What it Measures |
+|---|---|
+| Problem Clarity | Whether the cybersecurity problem is specific enough to research, model, and build against |
+| Feasibility | Whether a realistic prototype can be developed within the available project timeline and resources |
+| Literature Availability | Whether sufficient recent academic research exists to support a meaningful literature survey |
+| Novelty Headroom | Whether an initial prior-art and research review suggests that a meaningful technical gap may remain |
+| Patentability Potential (India) | Whether the proposed solution can demonstrate a concrete technical contribution or technical effect rather than only an abstract algorithm or business method |
+| Real-World Impact | The potential security and operational consequences of the problem if it remains unsolved |
 
 ---
 
-# Selected Project 2 – ProofPulse
+# 2. Evaluation of the Five Case Studies
 
-## Stateful Action-Level Dynamic Trust Verification
-
-### Problem
-
-Traditional authentication establishes the identity of a user,
-but an authenticated session may later be compromised or
-misused.
-
-An attacker controlling a valid session could perform sensitive
-operations such as accessing confidential data, changing
-privileges or initiating high-risk transactions.
-
-Therefore, there is a need to determine whether the specific
-action being performed should be trusted at that moment.
-
-### Proposed Solution
-
-ProofPulse is proposed as a cloud-based action-level trust
-verification platform.
-
-The system evaluates:
-
-- User identity
-- Device context
-- Location/environment
-- Behaviour
-- Session history
-- Action sensitivity
-- Resource sensitivity
-- Action sequence
-
-The resulting decision can be:
-
-**ALLOW / VERIFY / BLOCK**
-
-### High-Level Innovation Direction
-
-The project will investigate a:
-
-**Trust Transition Graph**
-
-Instead of evaluating every request as an isolated risk score,
-the system represents user activity as a sequence of trust-state
-transitions.
-
-Example:
-
-Normal Login
-→ Normal Activity
-→ New Device
-→ Privilege Escalation
-→ Sensitive Data Access
-→ External Transfer
-
-The accumulated transition pattern can trigger adaptive
-verification or temporary action blocking.
-
-### Core Flow
-
-User
-→ Application
-→ API Gateway
-→ Action Capture
-→ Trust Transition Engine
-→ Policy Decision
-→ Allow / Verify / Block
-→ Audit & Monitoring
-
-### Cloud Deployment
-
-The proposed system can be deployed using:
-
-- API Gateway
-- Authentication Service
-- Event Collector
-- Behaviour Analytics
-- Trust Transition Engine
-- Policy Engine
-- PostgreSQL
-- Redis/Event Streaming
-- Audit Service
-- Security Dashboard
-- Cloud Monitoring
-
-### Why Selected
-
-ProofPulse provides strong scope for a high-level Zero Trust
-architecture and can be implemented as a cloud-native security
-service.
-
-It addresses the practical problem of authenticated-session
-misuse while providing opportunities for behavioural analysis,
-adaptive security and real-time decision making.
-
-### Patent Potential
-
-The broad concept of continuous risk-based authentication
-already has significant prior art.
-
-Therefore, the project will not claim dynamic trust scoring itself
-as novel.
-
-The intended research direction is a stateful trust-transition
-mechanism that uses the evolution and relationship of privileged
-actions to determine the required assurance level for the next
-action.
+| Case Study | Problem Clarity | Feasibility | Literature Availability | Novelty Headroom | Patentability Potential | Real-World Impact | Total /30 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 1 — Cross-Tenant Ransomware Detection & Isolation | 5 | 4 | 5 | 2 | 4 | 4 | **24** |
+| 2 — Post-Quantum Key Migration Orchestrator | 4 | 3 | 4 | 3 | 4 | 5 | **23** |
+| 3 — Real-Time Deepfake Detection Gateway | 4 | 3 | 3 | 3 | 4 | 5 | **22** |
+| 4 — API Aggregation-Inference Attack Detection | 5 | 4 | 4 | 5 | 4 | 4 | **26** |
+| 5 — OT/IoT Anomaly-Driven Auto-Isolation | 4 | 4 | 4 | 4 | 5 | 5 | **26** |
 
 ---
 
-# Why These Two Projects Were Selected
+# 3. Comparative Selection Analysis
 
-The two selected projects provide complementary approaches to
-digital trust.
+## Case Study 1 — Cross-Tenant Ransomware Detection & Isolation
 
-### AgentGuard
+**Score: 24/30**
 
-Focuses on:
+### Strengths
 
-**Trust in Autonomous AI Actions**
+- Clearly defined cloud cybersecurity problem.
+- Strong real-world impact because ransomware can cause large-scale data loss.
+- Good feasibility for a simulated cloud environment.
+- Strong availability of ransomware detection literature.
+- Automatic isolation provides a concrete security response.
 
-### ProofPulse
+### Limitation
 
-Focuses on:
+The main weakness is **novelty headroom**.
 
-**Trust in Human/User Actions**
+An initial prior-art investigation indicated that ransomware detection based on storage I/O behavior, rapid file modification, and automated recovery or snapshot rollback is already a heavily explored and patented area.
 
-Together they form a broader project theme:
+The cross-tenant propagation and containment concept may still contain a research gap, but this gap requires deeper independent prior-art investigation.
 
-> Adaptive Digital Trust for Human and Autonomous Digital Actors
+### Selection Decision
 
----
+**Not selected.**
 
-# Final Selection
-
-## 1. AgentGuard
-**Purpose-Bound Security Firewall for Autonomous AI Agents**
-
-## 2. ProofPulse
-**Stateful Action-Level Dynamic Trust Verification**
-
-These two projects will proceed to the next stage of detailed
-system design, prior-art analysis, threat modelling and cloud
-architecture.
+Although technically strong, the uncertainty surrounding the novelty of the proposed mechanism makes it less attractive than the two higher-scoring candidates.
 
 ---
 
-## Important Note on Patentability
+## Case Study 2 — Post-Quantum Key Migration Orchestrator
 
-The selected projects are considered **potential innovation
-candidates**, not confirmed patentable inventions.
+**Score: 23/30**
 
-Before claiming patentability, a detailed search of:
+### Strengths
 
-- Existing patents
-- Patent applications
-- Research publications
-- Existing products
-- Open-source implementations
-- Standards
+- Addresses an emerging cybersecurity challenge.
+- Strong real-world importance for organizations with long-term sensitive data.
+- Multi-cloud deployment provides a realistic technical environment.
+- Dependency-aware and zero-downtime migration provides a meaningful engineering challenge.
+- Strong potential for research involving cryptographic infrastructure and cloud security.
 
-will be performed.
+### Limitation
 
-The final project will focus on a specific technical mechanism
-that demonstrates novelty, technical contribution and practical
-implementation potential.
+The major concern is **implementation complexity**.
+
+The system would need to interact with multiple cloud key-management systems, cryptographic infrastructure, service dependencies, and potentially HSM environments.
+
+This increases the complexity of developing and validating a convincing prototype within the available project timeline.
+
+### Selection Decision
+
+**Not selected.**
+
+The project remains a strong future research direction, but its current feasibility is lower than the selected projects.
+
+---
+
+## Case Study 3 — Real-Time Deepfake Detection Gateway
+
+**Score: 22/30**
+
+### Strengths
+
+- Addresses a rapidly growing cybersecurity threat.
+- High potential real-world impact.
+- Real-time detection and intervention provides a technically meaningful direction.
+- Cloud media infrastructure provides a realistic deployment environment.
+
+### Limitation
+
+Deepfake detection is already a highly active research area.
+
+Developing a reliable real-time detection system would also require significant work involving:
+
+- Audio processing
+- Video processing
+- Machine learning models
+- Real-time streaming
+- Latency optimization
+- False-positive reduction
+
+Therefore, both novelty uncertainty and implementation complexity reduce its suitability for the current project.
+
+### Selection Decision
+
+**Not selected.**
+
+The concept is valuable but was ranked below the two selected candidates.
+
+---
+
+# 4. Final Selection
+
+Based on the scoring framework, the two highest-scoring case studies were:
+
+| Rank | Case Study | Score | Decision |
+|---|---|---:|---|
+| 1 | Case Study 4 — API Aggregation-Inference Attack Detection | **26/30** | **Selected** |
+| 1 | Case Study 5 — OT/IoT Anomaly-Driven Auto-Isolation | **26/30** | **Selected** |
+| 3 | Case Study 1 — Cross-Tenant Ransomware Detection & Isolation | 24/30 | Not Selected |
+| 4 | Case Study 2 — Post-Quantum Key Migration Orchestrator | 23/30 | Not Selected |
+| 5 | Case Study 3 — Real-Time Deepfake Detection Gateway | 22/30 | Not Selected |
+
+The two selected projects provide distinct but complementary cybersecurity research directions.
+
+---
+
+# 5. Selected Project 1 — TesseraGuard
+
+## Aggregation-Aware API Threat Detection & Enforcement Gateway
+
+**Origin:** Case Study 4 — API Aggregation-Inference Attack Detection
+
+**Final Score:** 26/30
+
+---
+
+## 5.1 Problem Justification
+
+Modern cloud applications are increasingly built using microservices that communicate through APIs.
+
+Conventional API security controls generally evaluate requests individually.
+
+For example:
+
+API Request 1 → Authorized → ALLOW
+API Request 2 → Authorized → ALLOW
+API Request 3 → Authorized → ALLOW
+API Request 4 → Authorized → ALLOW
+
+Each request may be legitimate when examined independently.
+
+However, an attacker using a compromised identity can deliberately divide a large-scale data extraction into many small operations.
+
+For example:
+
+20 records
+    ↓
+20 records
+    ↓
+20 records
+    ↓
+20 records
+    ↓
+   ...
+    ↓
+Large-scale data extraction
+
+The security problem therefore exists at the combination level, rather than at the individual-request level.
+
+Core Problem
+
+How can a cloud security system identify when a sequence of individually authorized API operations collectively produces a potentially unauthorized or harmful outcome?
+
+This makes the problem sufficiently specific for research and prototype development.
+
+6. Selected Project 2 — ReflexGuard
+Edge-Native Anomaly Detection & Automated Isolation for Industrial IoT/OT
+
+Origin: Case Study 5 — OT/IoT Anomaly-Driven Auto-Isolation
+
+Final Score: 26/30
+
+6.1 Problem Justification
+
+Industrial environments increasingly connect sensors, actuators, controllers, and monitoring systems to networked and cloud-connected infrastructure.
+
+This connectivity creates a cybersecurity risk because compromising a connected device may have consequences beyond information loss.
+
+A compromised device could potentially send an abnormal command to industrial equipment.
+
+For example:
+
+Compromised Industrial Device
+            ↓
+       Abnormal Command
+            ↓
+      Industrial Network
+            ↓
+     Actuator / Equipment
+            ↓
+   Potential Physical Impact
+
+Traditional security systems may detect the anomaly and generate an alert, but an alert alone may not prevent the command from reaching the equipment.
+
+Core Problem
+
+How can an industrial cybersecurity system detect dangerous device behavior and automatically isolate the affected device quickly enough to prevent the abnormal command from reaching the control environment?
+
+This creates a specific cybersecurity problem that can be researched, simulated, and measured.
