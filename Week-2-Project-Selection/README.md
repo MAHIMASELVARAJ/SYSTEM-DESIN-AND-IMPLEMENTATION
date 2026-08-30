@@ -195,20 +195,20 @@ Large-scale data extraction
 
 The security problem therefore exists at the combination level, rather than at the individual-request level.
 
-Core Problem
+**Core Problem**
 
 How can a cloud security system identify when a sequence of individually authorized API operations collectively produces a potentially unauthorized or harmful outcome?
 
 This makes the problem sufficiently specific for research and prototype development.
 
-**6. Selected Project 2 — ReflexGuard**
-**Edge-Native Anomaly Detection & Automated Isolation for Industrial IoT/OT**
+#6. Selected Project 2 — ReflexGuard
+##Edge-Native Anomaly Detection & Automated Isolation for Industrial IoT/OT
 
-Origin: Case Study 5 — OT/IoT Anomaly-Driven Auto-Isolation
+**Origin:** Case Study 5 — OT/IoT Anomaly-Driven Auto-Isolation
 
-Final Score: 26/30
+**Final Score:** 26/30
 
-**6.1 Problem Justification**
+##6.1 Problem Justification
 
 Industrial environments increasingly connect sensors, actuators, controllers, and monitoring systems to networked and cloud-connected infrastructure.
 
@@ -230,7 +230,7 @@ Compromised Industrial Device
 
 Traditional security systems may detect the anomaly and generate an alert, but an alert alone may not prevent the command from reaching the equipment.
 
-Core Problem
+**Core Problem**
 
 How can an industrial cybersecurity system detect dangerous device behavior and automatically isolate the affected device quickly enough to prevent the abnormal command from reaching the control environment?
 
