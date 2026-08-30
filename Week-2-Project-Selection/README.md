@@ -201,14 +201,14 @@ How can a cloud security system identify when a sequence of individually authori
 
 This makes the problem sufficiently specific for research and prototype development.
 
-6. Selected Project 2 — ReflexGuard
-Edge-Native Anomaly Detection & Automated Isolation for Industrial IoT/OT
+**6. Selected Project 2 — ReflexGuard**
+**Edge-Native Anomaly Detection & Automated Isolation for Industrial IoT/OT**
 
 Origin: Case Study 5 — OT/IoT Anomaly-Driven Auto-Isolation
 
 Final Score: 26/30
 
-6.1 Problem Justification
+**6.1 Problem Justification**
 
 Industrial environments increasingly connect sensors, actuators, controllers, and monitoring systems to networked and cloud-connected infrastructure.
 
