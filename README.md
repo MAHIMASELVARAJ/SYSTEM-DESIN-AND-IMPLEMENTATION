@@ -140,13 +140,6 @@ Modern cloud applications use multiple microservices that communicate through AP
 
 Traditional security controls commonly evaluate API requests individually.
 
-For example:
-
-API Request 1 → Authorized → ALLOW
-API Request 2 → Authorized → ALLOW
-API Request 3 → Authorized → ALLOW
-API Request 4 → Authorized → ALLOW
-
 Although every individual request may be authorized, a sequence of such requests can collectively result in excessive data access or another unauthorized outcome.
 
 The problem addressed by TesseraGuard is therefore the detection of dangerous combinations of individually authorized API calls.
@@ -212,3 +205,125 @@ The system can determine:
 When a high-risk anomaly is detected, the affected device is automatically isolated from the control network at the edge.
 
 The cloud dashboard is notified in parallel so that operators can investigate the incident.
+# WEEK 3 - 📚 TesseraGuard – Literature Survey
+
+A literature survey was conducted to understand existing research related to anomaly detection, microservice systems, API-call analysis, and aggregation inference.
+
+Five papers were analyzed.
+| S.No | Paper                                                                                                      | Author(s)                                                                          | Year | Advantages                                                                                                    | Disadvantages                                                                                                          |
+| ---- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---: | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 1    | Authorization Propagation in Multi-Agent AI Systems: Identity Governance as Infrastructure                 | Tallam                                                                             | 2026 | Formally names and defines "aggregation inference"; provides theoretical grounding and a citable research gap | Does not propose a working algorithm; scoped to multi-agent AI delegation rather than general API security             |
+| 2    | Anomaly Detection and Root Cause Analysis for Microservice Systems                                         | Luan Pham                                                                          | 2026 | Identifies API-call event data as an underexplored signal; does not require a pre-given service call graph    | General anomaly/RCA focus rather than authorization-specific security; lacks standardized benchmark datasets           |
+| 3    | GAL-MAD: Towards Explainable Anomaly Detection in Microservice Applications Using Graph Attention Networks | L. Akmeemana, C. Attanayake, H. Faiz, S. Wickramanayake                            | 2025 | Combines structural graph-attention and temporal LSTM signals; provides explainable feature-level output      | Focuses on performance/response-time anomalies rather than security attacks; trace-level instrumentation adds overhead |
+| 4    | AI-Driven Anomaly Detection in Cloud-Native Microservices: The Night's Watch Algorithm                     | Dkmak, Can, Sevinc, Egeli, Baday, Cetintav                                         | 2025 | Unsupervised approach; does not require fixed thresholds or labels; real-time capable                         | Recall varies significantly; not specifically security-focused                                                         |
+| 5    | Anomaly Detection and Root-Cause Identification in Microservices: A Survey                                 | Luís M. Barata, Sérgio Sequeira, Eurico Lopes, Pedro R. M. Inácio, Mário M. Freire | 2026 | Comprehensive survey covering 117 studies using rigorous PRISMA methodology                                   | Survey only; does not specifically address aggregation/combination-risk detection                                      |
+# 📚 ReflexGuard – Literature Survey
+A literature survey was conducted to understand existing research related to industrial IoT security, anomaly detection, edge environments, intrusion detection, and industrial control systems.
+
+Five papers were analyzed.
+| S.No | Paper                                                                                              | Author(s)                                                                          |      Year | Advantages                                                                                                    | Disadvantages                                                                                                     |
+| ---- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | --------: | ------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| 1    | Trustworthy Adaptive AI for Real-Time Intrusion Detection in Industrial IoT Security               | Al Rawajbeh, Maria Soosai, Ramasamy, Khan                                          |      2025 | High accuracy, low false positives, fast performance on constrained edge hardware; explainable using SHAP     | Detects and alerts only; no automatic enforcement/isolation; evaluated on benchmark datasets                      |
+| 2    | EcoDefender: Energy-Efficient Hybrid Anomaly Detection for IoT Edge Gateways                       | Saeid Jamshidi, Martine Bellaïche, Omar Abdul Wahab                                |      2025 | Resource and energy efficient; low CPU and latency; provides theoretical stability and convergence guarantees | Focuses on detection and efficiency rather than response; may require retraining as traffic evolves               |
+| 3    | Real-Time Adaptive Anomaly Detection in Industrial IoT Environments                                | Mahsa Raeiszadeh, Amin Ebrahimzadeh, Roch H. Glitho, Johan Eker, Raquel A. F. Mini |      2024 | Handles multi-dimensional streaming data; adapts to concept drift; does not require labeled retraining        | No enforcement/isolation action; evaluated through trace-driven simulation rather than real industrial deployment |
+| 4    | Explainable Anomaly Detection for Industrial IoT Data Streams                                      | Ana Rita Paupério, Diogo Risca, Afonso Lourenço, Goreti Marreiros, Ricardo Martins |      2026 | Considers delayed/absent labels; provides interpretable feature importance and Partial Dependence Plots       | Relies on human-in-the-loop interaction; no automatic isolation/enforcement action                                |
+| 5    | Intrusion Detection Systems in Industrial Control Systems: Landscape, Challenges and Opportunities | Tong Wu, Dawei Zhou, Qingyu Ou, Fang Luo                                           | 2025/2026 | Recent systematic literature review covering real industrial scenario challenges                              | Review only; does not propose a new enforcement mechanism                                                         |
+# 🏗️ Week 4 – High-Level System Design
+
+After completing the literature survey, high-level architectures were designed for both selected projects.
+
+## TesseraGuard Architecture
+┌─────────────────┐
+│   API Gateway   │
+│ Every API Call  │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│  Caller Binder  │
+│ Caller + Session│
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│  Call Collector │
+│ History over    │
+│      Time       │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│  Graph Builder  │
+│ Data / Volume / │
+│      Speed      │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│   Risk Engine   │
+│ Risky Call      │
+│ Combinations    │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│  Policy Engine  │
+│ Allow / Throttle│
+│     / Block     │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│   Enforcement   │
+│ Real-Time API   │
+│     Control     │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│    Audit Log    │
+│ What & Why      │
+└─────────────────┘
+## ReflexGuard Architecture
+┌─────────────────┐
+│   OT/IoT        │
+│    Devices      │
+│Sensors/Actuators│
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│ Edge Collector  │
+│ Local Real-Time │
+│ Signal Capture  │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│ Baseline Model  │
+│ Normal Range    │
+│   Per Device    │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│ Anomaly Engine  │
+│ Detects         │
+│ Deviations      │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│   Risk Scorer   │
+│ Equipment /     │
+│ Process Harm    │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│   Edge Policy   │
+│ Allow / Alert / │
+│     Isolate     │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│  Auto-Isolation │
+│ Cuts Device Off │
+│ Before Signal   │
+│     Reaches     │
+│    Equipment    │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│ Ops Dashboard   │
+│ Notify Operator │
+│ Log Incident    │
+└─────────────────┘
