@@ -233,9 +233,13 @@ Five papers were analyzed.
 After completing the literature survey, high-level architectures were designed for both selected projects.
 
 ## TesseraGuard Architecture
+
 ┌─────────────────┐
+
 │   API Gateway   │
+
 │ Every API Call  │
+
 └────────┬────────┘
          ↓
 ┌─────────────────┐
