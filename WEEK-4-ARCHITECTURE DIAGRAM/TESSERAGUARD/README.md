@@ -107,13 +107,21 @@ The workflow focuses on identifying risky combinations of API calls and connecti
 ## High-Level Module List
 **S.No.	Module	Main Function**
 1	API Gateway	Entry point for every API request
+
 2	Caller Binder	Tags request with caller and session ID
+
 3	Call Collector	Logs calls per identity over time
+
 4	Graph Builder	Links calls using data, volume, and speed
+
 5	Risk Engine	Flags risky combinations of calls
+
 6	Policy Engine	Sets Allow / Throttle / Block
+
 7	Enforcement	Blocks identity's calls in real time
+
 8	Audit Log	Logs what happened and why
+
 ## Expected Security Flow
 API Request
     ↓
