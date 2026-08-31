@@ -236,11 +236,12 @@ After completing the literature survey, high-level architectures were designed f
 
 ┌─────────────────┐
 
-│   API Gateway   │
+│   API Gateway     │
 
-│ Every API Call  │
+│ Every API Call    │
 
 └────────┬────────┘
+
          ↓
 ┌─────────────────┐
 │  Caller Binder  │
