@@ -2,250 +2,213 @@
 
 ## Overview
 
-This repository documents a **design-thinking and research-driven project** focused on identifying and solving real-world problems in **Cybersecurity and Digital Trust**.
+This repository documents a **design-thinking and research-driven project** focused on identifying and designing solutions for real-world problems in **Cybersecurity and Digital Trust**.
 
-The project begins with the exploration of real-world case studies and progressively moves toward the identification, design and development of a high-impact solution.
+The project follows a structured progression from real-world problem identification to case-study evaluation, project selection, literature survey, and high-level system design.
 
 ### Project Journey
 
-**Design Thinking → Problem Identification → 5 Case Studies → Evaluation → 2 Selected Concepts → Literature Survey → High-Level Design → Implementation → Cloud Deployment**
+**Design Thinking → Problem Identification → 5 Case Studies → Evaluation → 2 Selected Projects → Literature Survey → High-Level Design**
 
 ---
 
-## 🎯 Why Cybersecurity & Digital Trust?
+# 🎯 Why Cybersecurity & Digital Trust?
 
-Cybersecurity is no longer limited to protecting networks and systems. Modern digital environments involve **cloud platforms, artificial intelligence, autonomous agents, digital identities and continuously changing user behavior**.
+Modern digital environments increasingly depend on cloud applications, APIs, IoT/OT devices, distributed systems, and continuously changing system behavior.
 
-This creates a growing need for systems that can establish and maintain **digital trust** while continuously protecting users, data, applications and intelligent systems.
+This creates cybersecurity challenges where detecting an individual suspicious event may not be sufficient. Security systems may also need to understand patterns across multiple actions and respond automatically when a dangerous condition is identified.
 
-Therefore, Cybersecurity and Digital Trust were selected as the project domain to explore practical problems that have:
+Therefore, the project focuses on cybersecurity problems that have:
 
 - Real-world security impact
-- Strong social and business relevance
-- Scope for innovative solutions
-- Research and development potential
-- High-level system-design challenges
-- Cloud deployment feasibility
-- Potential for future intellectual-property development
+- Clear technical problems
+- Research opportunities
+- Practical feasibility
+- Scope for innovative system design
+- Cloud deployment potential
+- Potential for future prototype development
+- Potential for further novelty and patent analysis
 
 ---
 
-# 🔎 Case Study Exploration
+# 🔎 Week 1 – Cybersecurity Case Study Exploration
 
-The first stage of the project focuses on identifying **5 real-world cybersecurity and digital-trust case studies**.
+The first stage of the project focused on identifying and analyzing **five cybersecurity case studies**.
 
-Each case study is analyzed using a design-thinking perspective:
+Each case study was examined based on:
 
-- Who is affected?
-- What is the real-world problem?
-- Why does the problem occur?
-- What are the limitations of current solutions?
-- What could be a better solution?
-- Can the solution be practically implemented?
-- Can it be designed as a scalable cloud system?
-- What research gap or innovation opportunity exists?
+- Problem clarity
+- Existing limitations
+- Proposed solution
+- Implementation approach
+- Target outcomes
+- Technical significance
+- Research and innovation potential
 
-📁 Detailed case studies:
+The five proposed case studies were:
+
+### Case Study 1
+**Cross-Tenant Ransomware Detection & Isolation**
+
+Focus:
+Detecting correlated ransomware activity across multiple cloud tenants and automatically isolating the affected storage segment.
+
+### Case Study 2
+**Post-Quantum Key Migration Orchestrator**
+
+Focus:
+Safely migrating cryptographic keys across multiple cloud environments while maintaining service availability.
+
+### Case Study 3
+**Real-Time Deepfake Detection Gateway**
+
+Focus:
+Detecting synthetic audio/video during live communication and intervening directly in the media pipeline.
+
+### Case Study 4
+**API Aggregation-Inference Attack Detection**
+
+Focus:
+Detecting attacks where individually authorized API requests combine over time to produce an unauthorized or dangerous outcome.
+
+### Case Study 5
+**OT/IoT Anomaly-Driven Auto-Isolation**
+
+Focus:
+Detecting abnormal behavior in industrial IoT/OT devices and automatically isolating a compromised device before its dangerous command reaches physical equipment.
+
+### Week 1 Status
+
+- [x] Identify cybersecurity problem domain
+- [x] Develop 5 cybersecurity case studies
+- [x] Define problem statements
+- [x] Propose solutions
+- [x] Define implementation approaches
+- [x] Define target outcomes
+- [x] Analyze research and innovation potential
+
+📁 **Week 1 Case Studies**
 
 `Week-1-Case-Studies/`
 
 ---
 
-# 📊 Project Selection
+# 📊 Week 2 – Case Study Evaluation & Project Selection
 
-After analyzing the five case studies, the two concepts with the strongest combination of:
+The five case studies were evaluated using six criteria:
 
-- Problem significance
-- Innovation potential
-- Technical depth
-- Research opportunity
-- Practical feasibility
-- Cloud deployment potential
-- Security impact
+| Criterion | What it Measures |
+|---|---|
+| Problem Clarity | Whether the problem is specific enough to research and build against |
+| Feasibility | Whether a realistic prototype can be developed within the project timeline |
+| Literature Availability | Availability of sufficient recent research for literature analysis |
+| Novelty Headroom | Whether an initial review suggests that a meaningful technical gap may remain |
+| Patentability Potential | Potential for a concrete technical contribution or technical effect |
+| Real-World Impact | Significance of the cybersecurity problem if left unsolved |
 
-were shortlisted for further study.
+Each criterion was scored from **1 to 5**, giving a maximum score of **30**.
 
-📁 Selection analysis:
+## Evaluation Results
 
-`Week-2-Project-Selection/`
+| Case Study | Problem Clarity | Feasibility | Literature | Novelty | Patentability | Impact | **Total /30** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 1 — Cross-Tenant Ransomware Detection & Isolation | 5 | 4 | 5 | 2 | 4 | 4 | **24** |
+| 2 — Post-Quantum Key Migration Orchestrator | 4 | 3 | 4 | 3 | 4 | 5 | **23** |
+| 3 — Real-Time Deepfake Detection Gateway | 4 | 3 | 3 | 3 | 4 | 5 | **22** |
+| 4 — API Aggregation-Inference Attack Detection | 5 | 4 | 4 | 5 | 4 | 4 | **26** |
+| 5 — OT/IoT Anomaly-Driven Auto-Isolation | 4 | 4 | 4 | 4 | 5 | 5 | **26** |
 
----
+The two highest-scoring case studies were **Case Study 4** and **Case Study 5**.
 
-# 🔐 Selected Concept 01 – AgentGuard
-
-## Purpose-Bound Security Firewall for Autonomous AI Agents
-
-### Problem
-
-Autonomous AI agents can interact with tools, APIs, databases and external services.
-
-Malicious instructions or unexpected behavior can cause an agent to perform actions that go beyond the user's original intention.
-
-### Proposed Direction
-
-AgentGuard explores a runtime security layer that evaluates an agent's requested action using:
-
-- User intent
-- Agent identity
-- Delegated permissions
-- Tool capabilities
-- Data sensitivity
-- Resource scope
-- Previous actions
-
-The system can produce:
-
-**ALLOW → VERIFY → BLOCK**
-
-### Design Focus
-
-The concept investigates how multiple security controls can work together to ensure that an autonomous agent remains within its **authorized purpose and capabilities**.
+Therefore, these two projects were selected for further literature research and high-level system design.
 
 ---
 
-# 🛡️ Selected Concept 02 – ProofPulse
+# 🛡️ Selected Project 1 – TesseraGuard
 
-## Stateful Action-Level Dynamic Trust Verification
+## Aggregation-Aware API Threat Detection & Enforcement Gateway
 
-### Problem
+**Origin:** Case Study 4 — API Aggregation-Inference Attack Detection
 
-Traditional authentication mainly establishes trust when a session begins.
-
-However, user behavior, device state, location and access patterns can change during an active session.
-
-### Proposed Direction
-
-ProofPulse explores continuous trust evaluation using:
-
-- User behavior
-- Device state
-- Context
-- Current action
-- Previous actions
-- Risk level
-
-The system can dynamically determine:
-
-**ALLOW → STEP-UP VERIFICATION → BLOCK**
-
-### Design Focus
-
-The concept investigates how **action history and contextual changes** can influence the trust state of an active session.
+**Score:** 26/30
 
 ---
 
-# 📚 Literature Survey
+## Problem
 
-After selecting the two concepts, a literature survey was conducted to understand existing research and identify research gaps.
+Modern cloud applications use multiple microservices that communicate through APIs.
 
-**10 recent research papers were analyzed — 5 for each selected concept.**
+Traditional security controls commonly evaluate API requests individually.
 
-The survey focuses on:
+For example:
 
-- Existing systems
-- Existing technologies
-- Existing workflows
-- Relevant methods
-- Limitations
-- Research gaps
-- Applicability to the proposed designs
+API Request 1 → Authorized → ALLOW
+API Request 2 → Authorized → ALLOW
+API Request 3 → Authorized → ALLOW
+API Request 4 → Authorized → ALLOW
 
-📁 Literature survey:
+Although every individual request may be authorized, a sequence of such requests can collectively result in excessive data access or another unauthorized outcome.
 
-`Week-3-Literature-Survey/`
+The problem addressed by TesseraGuard is therefore the detection of dangerous combinations of individually authorized API calls.
 
----
+## Proposed Solution
 
-# ☁️ High-Level Design & Cloud Vision
+TesseraGuard is designed as an aggregation-aware API threat detection and enforcement gateway.
 
-The selected concepts are being explored as **scalable, cloud-deployable cybersecurity systems**.
+Instead of evaluating only the current API request, the system maintains a history of actions associated with an identity and analyzes how multiple calls combine over time.
 
-The design process will consider:
+**The system considers factors such as:**
 
-- Secure APIs
-- Authentication and authorization
-- Policy enforcement
-- Data protection
-- Monitoring and logging
-- Machine learning where applicable
-- Containerization
-- Cloud infrastructure
-- Scalability
-- Security evaluation
+Caller identity
+Session information
+API calls
+Data accessed
+Data volume
+Rate of accumulation
+Combination of actions
 
-The detailed architecture and technology stack will be finalized during the system-design phase.
+The system then determines whether the accumulated activity represents a risky combination.
 
----
+The enforcement decision can be:
 
-# 💡 Innovation & Research Direction
+## ALLOW → THROTTLE → BLOCK
 
-The purpose of this project is not to simply reproduce existing systems.
+# 🏭 Selected Project 2 – ReflexGuard
+Edge-Native Anomaly Detection & Automated Isolation for Industrial IoT/OT
 
-The literature and case-study analysis are used to identify opportunities where existing technologies can be **combined, extended or redesigned** to address practical security problems.
+**Origin:** Case Study 5 — OT/IoT Anomaly-Driven Auto-Isolation
 
-The project therefore follows:
+**Score:** 26/30
 
-**Existing Solutions → Limitations → Research Gap → Proposed Design → Prototype**
+## Problem
 
-Potential patentability will be assessed separately through **prior-art and patent analysis** before making any intellectual-property claims.
+Industrial IoT and OT environments contain sensors and actuators that interact with physical equipment.
 
----
+A compromised device may behave differently from its established normal behavior and potentially issue a dangerous command to physical machinery.
 
-# 🚀 Project Roadmap
+Cloud-only monitoring may not react quickly enough when immediate action is required.
 
-### Phase 1 – Problem Exploration
-- [x] Select Cybersecurity & Digital Trust domain
-- [x] Identify 5 real-world case studies
-- [x] Analyze problems using design-thinking principles
+The problem addressed by ReflexGuard is therefore the detection of abnormal device behavior and automatic isolation at the edge before a dangerous signal reaches the physical equipment.
 
-### Phase 2 – Concept Selection
-- [x] Compare the 5 case studies
-- [x] Shortlist 2 high-potential concepts
+## Proposed Solution
 
-### Phase 3 – Research
-- [x] Conduct literature survey
-- [x] Analyze 10 recent research papers
-- [x] Map existing technologies to proposed concepts
-- [ ] Finalize research gaps
+ReflexGuard uses an edge-based security mechanism positioned close to industrial devices.
 
-### Phase 4 – System Design
-- [ ] Define system requirements
-- [ ] Develop high-level architecture
-- [ ] Design security workflow
-- [ ] Finalize technology stack
-- [ ] Design cloud architecture
+The system continuously observes device behavior and compares current activity with the established normal behavior of each device.
 
-### Phase 5 – Development
-- [ ] Develop prototype
-- [ ] Integrate security mechanisms
-- [ ] Perform functional testing
-- [ ] Perform security testing
+**The system considers:**
 
-### Phase 6 – Deployment & Evaluation
-- [ ] Deploy to cloud
-- [ ] Evaluate security
-- [ ] Evaluate performance
-- [ ] Analyze scalability
-- [ ] Conduct prior-art analysis
+Normal signal ranges
+Command vocabulary
+Timing patterns
+Device behavior
+Anomaly severity
+Potential physical consequence
 
----
+The system can determine:
 
-# 🎯 Final Goal
+## ALLOW → ALERT → ISOLATE
 
-To transform a **real-world cybersecurity problem identified through design thinking** into a:
+When a high-risk anomaly is detected, the affected device is automatically isolated from the control network at the edge.
 
-**Research-backed → Novel → Secure → Scalable → Cloud-deployable**
-
-working solution.
-
----
-
-## Current Status
-
-**Stage:** Literature Survey & High-Level System Design
-
-**Domain:** Cybersecurity & Digital Trust
-
-**Approach:** Design Thinking + Research + System Design
-
-**Focus Areas:** AI Security | Autonomous Agents | Zero Trust | Cloud Security | Digital Trust
+The cloud dashboard is notified in parallel so that operators can investigate the incident.
